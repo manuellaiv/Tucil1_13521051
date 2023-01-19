@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "equation.h"
 #include "boolean.h"
 
@@ -116,7 +117,7 @@ int solveEq(Eq *eq){
         if (eq->TabVal[op] == kali){
             res = eq->TabVal[init] * eq->TabVal[end];
         }
-        if (eq->TabVal[op] == bagi){
+        if (eq->TabVal[op] == bagi && eq->TabVal[end] != 0){
             res = eq->TabVal[init] / eq->TabVal[end];
         }
 
@@ -167,6 +168,5 @@ void showEq(Eq eq){
             printf("%d", eq.TabVal[i]);
         }
     }
+    printf("\n");
 }
-
-
