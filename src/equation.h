@@ -1,6 +1,8 @@
 #ifndef _EQUATION_
 #define _EQUATION_
 
+#include "boolean.h"
+
 typedef struct{
     int TabVal[50];
     int LenVal;
@@ -12,6 +14,9 @@ typedef struct{
 #define bagi 99994
 #define left 99995
 #define right 99996
+
+boolean isOp(int i);
+    // Menghasilkan true jika 
 
 int adaKurung(Eq eq);
     // Mengembalikan indeks kurung awal jika ada
@@ -32,7 +37,13 @@ int solveEq(Eq *eq);
     // Menyelesaikan persamaan
     // Urutannya tutup kurung, operasi kali bagi, operasi tambah kurang
 
-void addVal(int val, Eq *eq);
-    // Menambahkan operasi atau angka ke persamaan
+void showEq(Eq eq);
+    // Menampilkan persamaan
+
+boolean isSame(Eq eq1, Eq eq2);
+
+boolean isSame1(Eq eq1, Eq eq2);
+
+boolean isSame2(Eq eq1, Eq eq2);
 
 #endif
