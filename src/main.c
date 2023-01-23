@@ -89,12 +89,12 @@ void combin4(int arr[4], int op[4], ListDin *leq){
     eq.TabVal[0] = arr[0];
     for(int i = 0; i < 4; i++){
         eq.TabVal[1] = op[i];
-        eq.TabVal[2] = right;
+        eq.TabVal[2] = left;
         eq.TabVal[3] = arr[1];
         for(int j = 0; j < 4; j++){
             eq.TabVal[4] = op[j];
             eq.TabVal[5] = arr[2];
-            eq.TabVal[6] = left;
+            eq.TabVal[6] = right;
             for(int k = 0; k < 4; k++){
                 eq.TabVal[7] = op[k];
                 eq.TabVal[8] = arr[3];
@@ -340,7 +340,7 @@ void combinarr(int arr[4], int start, int end, ListDin *leq){
 
 int main(){
     ListDin leq;
-    CreateListDin(&leq, 400);
+    CreateListDin(&leq, 200);
     int input;
     printf("---- 24 GAME SOLVER ----\nPilih masukan input:\n1. Input user\n2. Random\nMasukkan pilihan: ");
     scanf("%d", &input);
@@ -426,11 +426,6 @@ int main(){
     }
     else{
         srand(time(NULL));
-        // arr[0] = rand() % 14;
-        // arr[1] = rand() % 14;
-        // arr[2] = rand() % 14;
-        // arr[3] = rand() % 14;
-
         for(int i = 0; i < 4; i++){
             arr[i] = rand()%14;
             while(arr[i] == 0){
@@ -440,8 +435,6 @@ int main(){
 
         printf("Angka: %d %d %d %d\n", arr[0], arr[1], arr[2], arr[3]);
     }
-
-    // scanf("%d %d %d %d", &arr[0], &arr[1], &arr[2], &arr[3]);
 
     clock_t begin = clock();
     combinarr(arr, 0, 4, &leq);
