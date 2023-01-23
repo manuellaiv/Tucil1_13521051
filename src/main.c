@@ -525,5 +525,6 @@ int main(){
         fclose(f);
     }
 
+    printf("Terima kasih sudah menggunakan 24 Solver!");
     return 0;
 }
